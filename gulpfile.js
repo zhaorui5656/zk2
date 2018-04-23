@@ -1,5 +1,6 @@
 var gulp = require("gulp");
 var server = require("gulp-webserver");
+var data = require("./src/json/data.json");
 
 gulp.task("default", function() {
     gulp.src("src")
@@ -8,8 +9,10 @@ gulp.task("default", function() {
             open: true,
             livereload: true,
             host: "localhost",
-            middelware: function(req, res, next) {
-
+            middleware: function(req, res, next) {
+                if (req.url == "/gd") {
+                    res.end(JSON.stringify(data))
+                }
                 next()
             }
         }))

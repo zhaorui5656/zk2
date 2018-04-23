@@ -6,10 +6,263 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            background: #0ff;
+        }
+        
+        .cp {
+            margin-left: 50px;
+        }
+        
+        .cx {
+            margin-left: 90px;
+        }
+        
+        .dpx {
+            margin-left: 90px;
+        }
+        
+        .dp {
+            margin-left: 50px;
+        }
+        
+        .cyx {
+            margin-left: 39px;
+        }
+        
+        .yyx {
+            margin-left: 39px;
+        }
+        
+        .yxx {
+            margin-left: 39px;
+        }
+        
+        .jx {
+            margin-left: 39px;
+        }
+        
+        .de {
+            margin-left: 39px;
+        }
+        
+        .bas {
+            margin-left: 85px;
+        }
+    </style>
 </head>
 
 <body>
-    111111111111
+    <div class="wrap">
+        <div class="dn"><span>-</span><b>我的电脑</b></div>
+        <div class="dnx">
+            <div class="cp"><span>-</span><b>C</b></div>
+            <div class="cx">
+                <p>a.txt</p>
+                <div class="changyong"><span>-</span><b>常用</b></div>
+                <div class="cyx">
+                    <p>b.txt</p>
+                    <p>c.html</p>
+                </div>
+                <div class="chengxu"><span>-</span><b>程序</b></div>
+                <div class="chengxux">
+                    <p class="jx">教学.doc</p>
+                    <div class="de"><span>-</span><b>demo</b></div>
+                    <div class="bas">base.js</div>
+                </div>
+            </div>
+            <div class="dp"><span>-</span><b>d</b></div>
+            <div class="dpx">
+                <div class="yy"><span>-</span><b>影音</b></div>
+                <div class="yyx">
+                    <p>金刚。rmvb</p>
+                    <p>并核实到</p>
+                </div>
+                <div class="youxi"><span>-</span><b>游戏</b></div>
+                <div class="yxx">lol</div>
+            </div>
+        </div>
+
+        <script src="./js/handlebars.js"></script>
+        <!--<script type="text/x-handlebars-template" id="sco">
+
+            <div class="dn"><span>-</span><b>{{name}}</b></div>
+            <div class="dnx">
+                {{#each children}}
+                <div class="cp"><span>-</span><b>{{name}}</b></div>
+                <div class="cx">
+                    <p>a.txt</p>
+                    <div class="changyong"><span>-</span><b>常用</b></div>
+                    <div class="cyx">
+                        <p>b.txt</p>
+                        <p>c.html</p>
+                    </div>
+                    <div class="chengxu"><span>-</span><b>程序</b></div>
+                    <div class="chengxux">
+                        <p class="jx">教学.doc</p>
+                        <div class="de"><span>-</span><b>demo</b></div>
+                        <div class="bas">base.js</div>
+                    </div>
+                </div>
+                <div class="dp"><span>-</span><b>d</b></div>
+                <div class="dpx">
+                    <div class="yy"><span>-</span><b>影音</b></div>
+                    <div class="yyx">
+                        <p>金刚。rmvb</p>
+                        <p>并核实到</p>
+                    </div>
+                    <div class="youxi"><span>-</span><b>游戏</b></div>
+                    <div class="yxx">lol</div>
+                </div>
+            </div>
+        </script>-->
+
+
+    </div>
+    <script src="./js/jquery-1.8.3.min.js"></script>
+    <script>
+        $.ajax({
+            url: "/gd",
+            type: "GET",
+            success: function(res) {
+                var data = JSON.parse(res);
+                // var sco = $("#sco").html();
+                // var tem = Handlebars.compile(sco);
+                // var ddc = tem(data);
+
+
+
+
+
+                $(".dn").on("click", "span", function() {
+                    var sh = $(this).html();
+
+                    if (sh == "-") {
+                        $(this).html("+")
+                        $(".dnx").hide();
+
+                    } else {
+                        $(this).html("-")
+                        $(".dnx").show();
+                    }
+                })
+
+
+                $(".cp").on("click", "span", function() {
+                    var ch = $(this).html();
+
+                    if (ch == "-") {
+                        $(this).html("+")
+                        $(".cx").hide();
+
+                    } else {
+                        $(this).html("-")
+                        $(".cx").show();
+                    }
+                })
+
+                $(".dp").on("click", "span", function() {
+                    var dh = $(this).html();
+
+                    if (dh == "-") {
+                        $(this).html("+")
+                        $(".dpx").hide();
+
+                    } else {
+                        $(this).html("-")
+                        $(".dpx").show();
+                    }
+                })
+
+
+
+
+
+
+                $(".chengxu").on("click", "span", function() {
+                    var chengxuh = $(this).html();
+
+                    if (chengxuh == "-") {
+                        $(this).html("+")
+                        $(".chengxux").hide();
+
+                    } else {
+                        $(this).html("-")
+                        $(".chengxux").show();
+                    }
+                })
+
+
+
+
+
+                $(".changyong").on("click", "span", function() {
+                    var changyongh = $(this).html();
+
+                    if (changyongh == "-") {
+                        $(this).html("+")
+                        $(".cyx").hide();
+
+                    } else {
+                        $(this).html("-")
+                        $(".cyx").show();
+                    }
+                })
+
+
+
+                $(".de").on("click", "span", function() {
+                    var deh = $(this).html();
+
+                    if (deh == "-") {
+                        $(this).html("+")
+                        $(".bas").hide();
+
+                    } else {
+                        $(this).html("-")
+                        $(".bas").show();
+                    }
+                })
+
+
+
+
+                $(".yy").on("click", "span", function() {
+                    var yyh = $(this).html();
+
+                    if (yyh == "-") {
+                        $(this).html("+")
+                        $(".yyx").hide();
+
+                    } else {
+                        $(this).html("-")
+                        $(".yyx").show();
+                    }
+                })
+
+
+                $(".youxi").on("click", "span", function() {
+                    var youxih = $(this).html();
+
+                    if (youxih == "-") {
+                        $(this).html("+")
+                        $(".yxx").hide();
+
+                    } else {
+                        $(this).html("-")
+                        $(".yxx").show();
+                    }
+                })
+
+
+
+
+            }
+        })
+    </script>
 </body>
 
 </html>
